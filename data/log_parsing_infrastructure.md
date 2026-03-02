@@ -1,9 +1,9 @@
-# Log Parsing Infrastructure for Enterprise CI/CD Pipelines
+# Log Processing Infrastructure for Enterprise CI/CD Pipelines
 30th August, 2024
 
 <br>
 
-I built systems for distributed log parsing in one of my past internships, here is my take and understanding on designing such scalable infrastructure. Modern CI/CD pipelines generate massive volumes of unstructured log data that contain critical insights about deployment failures and performance bottlenecks, requiring real-time processing infrastructure to extract actionable data insights from these streams. This data can then be used to then generate DevOps Insights ([DevOps DORA](https://www.atlassian.com/devops/frameworks/dora-metrics), [DevOps SPACE](https://linearb.io/blog/space-framework) frameworks), clean datasets for machine learning models, or for government regulatory needs.
+Had built systems for distributed log processing in one of my past internships, here is my take and understanding on designing such scalable infrastructure. Modern CI/CD pipelines generate massive volumes of unstructured log data that contain critical insights about deployment failures and performance bottlenecks, requiring real-time processing infrastructure to extract actionable data insights from these streams. This data can be used to generate DevOps Insights ([DevOps DORA](https://www.atlassian.com/devops/frameworks/dora-metrics), [DevOps SPACE](https://linearb.io/blog/space-framework) frameworks), clean pre-training datasets for machine learning models, or for government regulatory needs ([SMOB](https://www.cyber.gc.ca/en/news-events/joint-guidance-shared-vision-software-bill-materials-cyber-security)).
 
 <br>
 
@@ -227,7 +227,7 @@ This distributed log parsing infrastructure transforms unstructured CI/CD logs i
 
 <br>
 
-– aditya
+– Aditya
 
 
 <br><br><br>
