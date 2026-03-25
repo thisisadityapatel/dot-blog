@@ -49,9 +49,9 @@ function App() {
         <h1>the thesaurus</h1>
 
         <nav className="links">
+          <a href="https://aditya-patel.com" rel="noopener noreferrer">portfolio</a>
           <a href="https://github.com/thisisadityapatel" target="_blank" rel="noopener noreferrer">github</a>
           <a href="https://linkedin.com/in/thisisadityapatel" target="_blank" rel="noopener noreferrer">linkedin</a>
-          <a href="https://aditya-patel.com" rel="noopener noreferrer">portfolio website</a>
         </nav>
 
         <Routes>
