@@ -63,12 +63,18 @@
   line-height: 1.65;
 }
 
+.blog-content ol,
+.blog-content ul {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
 /* Inline code styling */
 .blog-content code:not(pre code) {
   background-color: rgba(110, 118, 129, 0.2);
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  font-size: 0.9em;
+  font-size: 0.95rem;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -125,6 +131,7 @@
 .blog-content pre code {
   background: transparent !important;
   padding: 0 !important;
+  font-size: 0.95rem;
 }
 
 /* Image styling */
