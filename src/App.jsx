@@ -56,7 +56,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<BlogList />} />
-          <Route path="/:slug" element={<BlogPost />} />
+          <Route path="/:slug" element={<BlogPost theme={theme} />} />
         </Routes>
       </div>
     </BrowserRouter>

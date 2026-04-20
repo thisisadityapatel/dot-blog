@@ -4,11 +4,11 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { vscDarkPlus, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { loadBlogPost } from '../utils/blogLoader';
 import './BlogPost.css';
 
-function CodeBlock({ language, children }) {
+function CodeBlock({ language, children, theme }) {
   const [copied, setCopied] = useState(false);
   const code = String(children).replace(/\n$/, '');
 
@@ -20,18 +20,24 @@ function CodeBlock({ language, children }) {
   }
 
   return (
-    <div className="code-block-wrapper">
+    <div className="code-block-wrapper" data-theme={theme}>
       <button className="copy-button" onClick={handleCopy}>
         {copied ? 'Copied!' : 'Copy'}
       </button>
-      <SyntaxHighlighter style={vscDarkPlus} language={language} PreTag="div">
+      <SyntaxHighlighter
+        style={theme === 'dark' ? vscDarkPlus : oneLight}
+        language={language}
+        PreTag="div"
+        customStyle={{ borderRadius: '8px', overflow: 'hidden', fontSize: '0.85rem' }}
+        codeTagProps={{ style: { fontSize: 'inherit' } }}
+      >
         {code}
       </SyntaxHighlighter>
     </div>
   );
 }
 
-function BlogPost() {
+function BlogPost({ theme }) {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -66,7 +72,7 @@ function BlogPost() {
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
-                <CodeBlock language={match[1]}>{children}</CodeBlock>
+                <CodeBlock language={match[1]} theme={theme}>{children}</CodeBlock>
               ) : (
                 <code className={className} {...props}>
                   {children}

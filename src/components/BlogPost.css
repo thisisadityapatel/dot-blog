@@ -47,7 +47,7 @@
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .blog-content h4 {
@@ -96,6 +96,17 @@
 .copy-button:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
+}
+
+[data-theme="light"] .copy-button {
+  background: rgba(0, 0, 0, 0.06);
+  color: #444;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .copy-button:hover {
+  background: rgba(0, 0, 0, 0.12);
+  color: #111;
 }
 
 /* Code block container styling */

@@ -6,12 +6,14 @@ Had built systems for distributed log processing in one of my past internships, 
 ### Why
 
 In my case the deployment were in Github Actions + OpenShift Container Platform, development teams deploy applications hundreds or thousands of times per day across multiple environments, cloud providers (AWS, GCP), and deployment tools. This technical blog walks through building a high performance log parsing system using a distributed event-driven architecture, to ingest data in a data warehouse (Elasticsearch in this case).
+<br/>
 
 ### Design Overview
 
 <div style="text-align: center; margin: 16px 0;">
   <img src="/images/system_design.png" alt="System Design" style="max-width: 800px; width: 100%; height: auto" />
 </div>
+<br/>
 
 ### Producer - Log Collection and Event Publishing
 
@@ -85,6 +87,7 @@ The code above sends events to a random partition in the Kafka topic. In the cur
 - [GitHub Actions API for Workflow Runs](https://docs.github.com/en/rest/actions/workflow-runs)
 - [Apache Kafka Producer Configuration](https://kafka.apache.org/documentation/#producerconfigs) 
 - [AWS S3 Unload Documentation](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html)
+<br/>
 
 ### Consumer - Event Subscription and Spark Processing
 
@@ -142,6 +145,7 @@ Multiple Spark worker nodes enable parallel processing of different deployments 
 - [Apache Spark Cluster Mode Overview](https://spark.apache.org/docs/latest/cluster-overview.html)
 - [Kafka Consumer API Documentation](https://kafka.apache.org/documentation/#consumerapi)
 - [AWS EMR Spark Configuration](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark-configure.html)
+<br/>
 
 ### Processor - Log Parsing and Data Structuring
 
@@ -187,7 +191,9 @@ The parsing engine processes each log line to extract timestamps, log levels, bu
 
 The final Elasticsearch document contains structured data including parsed log entries organized by type and timestamp, identified build steps with success/failure status, extracted error messages with severity classifications, and calculated metrics such as deployment duration and error rates. Elasticsearch was chosen as our document store because it enables fast dashboard generation and provides powerful search capabilities for developers to query deployment logs.
 
----
+<br/>
+
+### Recap Note
 
 This distributed log parsing infrastructure transforms unstructured CI/CD logs into actionable intelligence through a three-component architecture: Airflow producers for reliable collection, Kafka-Spark consumers for scalable processing, and regex-based processors for data structuring. The system handles enterprise-scale deployment volumes while maintaining fault tolerance and enables insights into DevOps deployment data, training ML models, generating DORA metrics, and powering developer AI tools.
 
