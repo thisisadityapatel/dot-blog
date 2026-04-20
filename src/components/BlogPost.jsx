@@ -28,7 +28,7 @@ function CodeBlock({ language, children, theme }) {
         style={theme === 'dark' ? vscDarkPlus : oneLight}
         language={language}
         PreTag="div"
-        customStyle={{ borderRadius: '8px', overflow: 'hidden', fontSize: '0.85rem' }}
+        customStyle={{ borderRadius: '8px', overflowX: 'auto', fontSize: '0.85rem' }}
         codeTagProps={{ style: { fontSize: 'inherit' } }}
       >
         {code}
