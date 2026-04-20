@@ -23,6 +23,8 @@
 
 .blog-content a {
   text-decoration: underline;
+  font-style: italic;
+  color: #8a9bb0;
 }
 
 .blog-content h1 {
@@ -42,8 +44,10 @@
 .blog-content h3 {
   font-size: 1.15rem;
   font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 0.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .blog-content h4 {
